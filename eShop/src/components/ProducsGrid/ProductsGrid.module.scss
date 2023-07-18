@@ -1,4 +1,6 @@
 .grid {
   display: flex;
+  flex-wrap: wrap;
   gap: 1em;
+  justify-content: flex-start;
 }

@@ -9,7 +9,7 @@ const FeaturedCard = ({ product }) => {
     <div className={style.featuredCard}>
       <h4>FeaturedCard</h4>
       {image ? <img src={image} alt="" /> : <img src={pic} alt="No image" />}
-      <h3>This is a featured product</h3>
+
       <h4>{name}</h4>
     </div>
   );

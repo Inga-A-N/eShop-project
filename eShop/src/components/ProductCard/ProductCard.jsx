@@ -11,7 +11,6 @@ const ProductCard = ({ product }) => {
       <h4>{name}</h4>
       <h4>Price: AUD {price}</h4>
       <h4>Quantity</h4>
-      <h4>Favourite</h4>
     </section>
   );
 };
