@@ -42,5 +42,5 @@ export const reduceProductCount = async (id) => {
   const updatedDoc = await updateDoc(docRef, {
     watchCount: increment(-1),
   });
-  return await getMovieById(id);
+  return await getProduct(id);
 };

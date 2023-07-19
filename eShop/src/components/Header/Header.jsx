@@ -1,11 +1,12 @@
 import React from "react";
 import style from "./Header.module.scss";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className={style.header}>
+    <Link to={"/"} className={style.header}>
       <h1>A-MAZE eShop</h1>
-    </div>
+    </Link>
   );
 };
 

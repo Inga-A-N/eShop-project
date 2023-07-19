@@ -12,28 +12,26 @@ import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 
 function App() {
   testDatabse();
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    getAllProducts()
-      .then((productData) => setProducts(productData))
-      .catch((error) => console.log(error));
-  }, []);
+  // const [products, setProducts] = useState([]);
+  // useEffect(() => {
+  //   getAllProducts()
+  //     .then((productData) => setProducts(productData))
+  //     .catch((error) => console.log(error));
+  // }, []);
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Header />
 
         <Routes>
-          <ProductsGrid />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:id" element={<ProductPage />} />
         </Routes>
 
         <Footer />
-      </BrowserRouter> */}
-      <Header />
-      <HomePage products={products} />
-      <ProductPage />
+      </BrowserRouter>
+
       <ShoppingCart />
-      <Footer />
     </>
   );
 }

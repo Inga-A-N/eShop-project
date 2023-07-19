@@ -1,17 +1,18 @@
 import React from "react";
 import pic from "../../assets/no-image-available-icon.webp";
 import style from "./ProductCard.module.scss";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  const { name, price, image } = product;
+  const { name, price, image, id } = product;
   return (
-    <section className={style.card}>
-      {image ? <img src={image} alt="" /> : <img src={pic} alt="No image" />}
-      <h3>This is my product</h3>
+    <Link to={id} className={style.card}>
       <h4>{name}</h4>
-      <h4>Price: AUD {price}</h4>
-      <h4>Quantity</h4>
-    </section>
+      {image ? <img src={image} alt="" /> : <img src={pic} alt="No image" />}
+
+      <h4>Price: ${price.toFixed(2)}</h4>
+      {/* <Link to={id}>See More</Link> */}
+    </Link>
   );
 };
 
