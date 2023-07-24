@@ -1,0 +1,16 @@
+.addToCart {
+  position: relative;
+  //   height: auto;
+  width: 80%;
+  background-color: #2a426d;
+  border: 2px solid #2a426d;
+  color: #fff;
+  min-width: auto;
+  margin: 1em;
+  border-radius: 46px;
+  font-weight: 600;
+  &:hover {
+    background-color: white;
+    color: #2a426d;
+  }
+}

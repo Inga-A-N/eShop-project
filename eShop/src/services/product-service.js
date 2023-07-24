@@ -13,8 +13,8 @@ import {
 
 export const testDatabse = async () => {
   const querySnapshot = await getDocs(collection(db, "productCollection"));
-  console.log(querySnapshot);
-  querySnapshot.forEach((doc) => console.log(doc.id, doc.data()));
+  // console.log(querySnapshot);
+  // querySnapshot.forEach((doc) => console.log(doc.id, doc.data()));
 };
 export const getAllProducts = async () => {
   const collectionRef = collection(db, "productCollection");
@@ -40,7 +40,7 @@ export const getProduct = async (id) => {
 export const reduceProductCount = async (id) => {
   const docRef = doc(db, "productCollection", id);
   const updatedDoc = await updateDoc(docRef, {
-    watchCount: increment(-1),
+    quantity: increment(-1),
   });
   return await getProduct(id);
 };

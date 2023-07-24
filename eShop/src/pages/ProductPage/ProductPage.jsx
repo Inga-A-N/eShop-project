@@ -3,7 +3,10 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProduct } from "../../services/product-service";
 
-const ProductPage = () => {
+import style from "../../common_styles.module.scss";
+import Button from "../../components/Button/Button";
+
+const ProductPage = ({ buttonClick }) => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
@@ -14,7 +17,9 @@ const ProductPage = () => {
   }, []);
   return (
     <section>
-      <h2>Product Page</h2>
+      <Link to={"/cart"} className={style.navAndLinks}>
+        <p>Shopping cart</p>
+      </Link>
       {product && (
         <main>
           <h2>{product.name}</h2>
@@ -29,6 +34,8 @@ const ProductPage = () => {
         </main>
       )}
       {error && <p>{error.message}</p>}
+
+      <Button id={id} buttonClick={buttonClick} />
       <Link to={"/"}>Go Back</Link>
     </section>
   );
